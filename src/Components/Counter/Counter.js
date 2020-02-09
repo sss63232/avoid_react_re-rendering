@@ -1,19 +1,34 @@
 import React, { useState } from 'react'
 
-const CounterTitle = () => {
-  console.log('Title rendering!')
+const Title = props => {
+  const { title } = props
+
+  console.log(`${title} is rendering!`)
+
   return (
     <div>
-      <h1>Counter</h1>
+      <h1>{title}</h1>
     </div>
   )
 }
 
-const Counter = () => {
+const ReactMemoTitle = React.memo(Title)
+
+const Counter = props => {
   const [count, setCount] = useState(0)
+
   return (
     <div>
-      <CounterTitle />
+      <section>
+        <Title
+          title='Normal Title'
+        />
+      </section>
+      <section>
+        <ReactMemoTitle
+          title='ReactMemo Title'
+        />
+      </section>
 
       <div>{`current count:：${count}`}</div>
 
