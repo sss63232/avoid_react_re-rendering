@@ -1,5 +1,5 @@
 {
-  "name": "avoid_react_re-rendering",
+  "name": "1_react.memo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
